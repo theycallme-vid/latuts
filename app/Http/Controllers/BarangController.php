@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Barang;
+use App\Models\Barang; // TAMBAHKAN
 use App\Models\Kategori;
 
 class BarangController extends Controller
@@ -18,13 +18,13 @@ class BarangController extends Controller
         }
     }
 
-    public function create()
+    public function create() // create akan muncul ketika user menekan tombol href create di index.blade
     {
         $kategoris = Kategori::all();
-        return view('barang.create', compact('kategoris'));
+        return view('barang.create', compact('kategoris')); //compact= untuk mengirimkan var kategoris untuk diloop
     }
 
-    public function store(Request $request)
+    public function store(Request $request) // store akan bekerja ketika submit form di create.blade.php
     {
         $request->validate([
             'nama' => ['required', 'max:100'],

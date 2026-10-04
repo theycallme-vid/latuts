@@ -55,6 +55,7 @@ class KategoriController extends Controller
         $kategori = Kategori::findOrFail($id);
         return view('kategori.update', compact('kategori'));
     }
+    // awal masuk dari index.blade setelah itu akan masuk html kategori.update
 
     // 5. PROSES UBAH DATA (UPDATE)
     public function update(Request $request, string $id)
